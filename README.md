@@ -4,14 +4,17 @@ heroku-buildpack-vips
 Important notes:
 
 This buildpack started out as one of the many that are out there, and ended up
-being completely different. The build script uses docker and also includes pdf
-support via poppler. In order to use this buildpack, you must install these packages in your heroku application:
+being completely different. The build script uses docker, includes pdf support
+via poppler, and adds support for HEIC images from Apple devices. In order to
+use this buildpack, you must install these packages in your heroku application:
 
 - libglib2.0-0
 - libglib2.0-dev
 - libpoppler-glib8
+- libheif-dev
 
-The easiest way to do this is using the heroku apt buildpack.
+The easiest way to do this is using the heroku apt buildpack and copy those
+four lines into an Aptfile.
 
 This buildpack was put together with the help of John Cupitt, the creator of
 libvips. He was invaluable in my efforts to get a working libvips installation
@@ -27,7 +30,7 @@ Heroku buildpack with [libvips](https://github.com/jcupitt/libvips) installed.
 Add this buildpack to your app:
 
 ```
-https://github.com/brandoncc/heroku-buildpack-vips
+https://github.com/travisp/heroku-buildpack-vips
 ```
 
 ## Build script
